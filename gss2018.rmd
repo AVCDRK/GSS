@@ -43,7 +43,7 @@ fisher.test(votetab)
 <!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?!-->
 
 This data is from the 2018 General Social Survey. The first blocks of R-code has selected down a subset of the data to just 15 variables. It has further removed unwanted factor levels in much of the data. Examine that code to see what it is doing. First explain what you make out of comparing how people voted in 2012 with 2016.
-Then go own to compair... 
+
 
 ## Methods
 
@@ -71,7 +71,7 @@ Then go own to compair...
 
 <!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?!-->
 
-Now answer How the vote in 2012 is related to race.
+Now answer Is belief in the bigbang theory (BIGBANG) independent of belief in the afterlife (POSTLIFE)
 
 ## Methods
 
@@ -99,7 +99,7 @@ Now answer How the vote in 2012 is related to race.
 
 <!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?!-->
 
-This time compare the vote in 2016 to race.
+This time compare the opinion on death penalty (CAPPUN) with opinion on courts (COURTS).
 
 ## Methods
 
