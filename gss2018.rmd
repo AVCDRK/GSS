@@ -31,18 +31,12 @@ levels(mydata4$VOTE12)[2] <- "no in 12"
 ```
 
 
-```{r}
-barchartGC(~VOTE16+VOTE12, data=mydata4, type = "percent") 
-chisqtestGC(~VOTE16+VOTE12, data=mydata4)
-votetab=xtabs(~VOTE16+VOTE12, data=mydata4)
-fisher.test(votetab)
-```
 
 # Introduction Question 1
 
 <!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?!-->
 
-This data is from the 2018 General Social Survey. The first blocks of R-code has selected down a subset of the data to just 15 variables. It has further removed unwanted factor levels in much of the data. Examine that code to see what it is doing. First explain what you make out of comparing how people voted in 2012 with 2016.
+This data is from the 2018 General Social Survey. The first blocks of R-code has selected down a subset of the data to just 15 variables. It has further removed unwanted factor levels in much of the data. Examine that code to see what it is doing. Finally address this question.  Is opinion on the death penalty (CAPPUN) independent of gun ownership (OWNGUN)?
 
 
 ## Methods
@@ -99,7 +93,7 @@ Now answer Is belief in the bigbang theory (BIGBANG) independent of belief in th
 
 <!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?!-->
 
-This time compare the opinion on death penalty (CAPPUN) with opinion on courts (COURTS).
+Finally determine if a persons opinion on death penalty (CAPPUN) is independent of their race (RACE).
 
 ## Methods
 
