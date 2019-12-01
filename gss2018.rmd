@@ -13,22 +13,9 @@ output:
 require(tigerstats)
 require(tidyverse)
 require(foreign)
-Gss <- read.spss("GSS2018.sav")
-Gss1 <- as.tibble(Gss)
+source("GrabData.R")
 ```
 
-```{r include=FALSE,echo=FALSE}
-#names(Gss1)
-mydata <- select(Gss1,VOTE16,RACE,REGION,EDUC,BIGBANG,EVOLVED,DEGREE,POSTLIFE,AGE,OWNGUN,CAPPUN,COURTS,POLVIEWS,VOTE12,GOD)
-mydata$AGE <- as.numeric(mydata$AGE)
-mydata$EDUC <- as.numeric(mydata$EDUC)
-mydata2 <-filter(mydata,RACE!="IAP" ) %>% droplevels()
-mydata3 <- filter(mydata2,BIGBANG=="True" | BIGBANG=="False",EVOLVED=="True"|EVOLVED=="False",POSTLIFE=="YES"|POSTLIFE=="NO",OWNGUN=="YES"|OWNGUN=="NO",COURTS=="TOO HARSH"|COURTS=="NOT HARSH ENOUGH"|COURTS=="ABOUT RIGHT") %>% droplevels()
-mydata4 <- filter(mydata3,CAPPUN=="FAVOR"|CAPPUN=="OPPOSE",VOTE12=="Voted"|VOTE12=="Did not vote",VOTE16=="Voted"|VOTE16=="Did not vote") %>% droplevels()
-levels(mydata4$VOTE12)[1] <- "voted12"
-levels(mydata4$VOTE12)[2] <- "no in 12"
-
-```
 
 
 
@@ -36,7 +23,7 @@ levels(mydata4$VOTE12)[2] <- "no in 12"
 
 <!--In this section you explain what you are trying to show.  Where did the data come from?  What is the research or other question you are trying to answer?!-->
 
-This data is from the 2018 General Social Survey. The first blocks of R-code has selected down a subset of the data to just 15 variables. It has further removed unwanted factor levels in much of the data. Examine that code to see what it is doing. Finally address this question.  Is opinion on the death penalty (CAPPUN) independent of gun ownership (OWNGUN)?
+The data in the dataframe GSSdata is from the 2018 General Social Survey. The first blocks of R-code has selected down a subset of the data to just 15 variables. It has further removed unwanted factor levels in much of the data. Examine the code in the GrabData.R file to see what it is doing. Finally address this question.  Is opinion on the death penalty (CAPPUN) independent of gun ownership (OWNGUN)?
 
 
 ## Methods

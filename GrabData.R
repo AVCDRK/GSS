@@ -1,0 +1,15 @@
+require(tigerstats)
+require(tidyverse)
+require(foreign)
+Gss <- read.spss("GSS2018.sav")
+Gss1 <- as.tibble(Gss)
+mydata <- select(Gss1,VOTE16,RACE,REGION,EDUC,BIGBANG,EVOLVED,DEGREE,POSTLIFE,AGE,OWNGUN,CAPPUN,COURTS,POLVIEWS,VOTE12,GOD,WORDSUM)
+mydata$AGE <- as.numeric(mydata$AGE)
+mydata$EDUC <- as.numeric(mydata$EDUC)
+mydata$WORDSUM<- as.numeric(mydata$WORDSUM)
+mydata2 <-filter(mydata,RACE!="IAP" ) %>% droplevels()
+mydata3 <- filter(mydata2,BIGBANG=="True" | BIGBANG=="False",EVOLVED=="True"|EVOLVED=="False",POSTLIFE=="YES"|POSTLIFE=="NO",OWNGUN=="YES"|OWNGUN=="NO",COURTS=="TOO HARSH"|COURTS=="NOT HARSH ENOUGH"|COURTS=="ABOUT RIGHT") %>% droplevels()
+GSSdata <- filter(mydata3,CAPPUN=="FAVOR"|CAPPUN=="OPPOSE",VOTE12=="Voted"|VOTE12=="Did not vote",VOTE16=="Voted"|VOTE16=="Did not vote") %>% droplevels()
+levels(GSSdata$VOTE12)[1] <- "voted12"
+levels(GSSdata$VOTE12)[2] <- "no in 12"
+rm(Gss,Gss1,mydata,mydata2,mydata3)
