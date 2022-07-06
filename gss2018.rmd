@@ -1,7 +1,7 @@
 ---
 title: "General Social Survey"
-author: "Your Name"
-date: "Year 2020"
+author: "Kaylie Brehm"
+date: "Summer 2022"
 output: 
   html_document:
     number_sections: true
@@ -83,11 +83,16 @@ Is there a difference in years of education (EDUC) between the those who did or 
 
 Determine if a persons performance on the wordsum test (WORDSUM) is independent of their level of schooling (DEGREE).
 
+$H_0$ A persons performance on the wordsum test is not independent of their level of schooling.  
+$H_A$ A persons performance on the wordsum test is independent of their level of schooling.
+
 ## Methods
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method.!-->
 
-##Results
+The numerical values on the average score of WORDSUM test will be compared with the level of schooling degree (categorical) using a numerical-categorical analysis. I will use a boxplot graph, some numerical values, and an aov to observe this.
+
+## Results
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
@@ -97,14 +102,35 @@ Determine if a persons performance on the wordsum test (WORDSUM) is independent 
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
+
+```{r}
+boxplot(WORDSUM~DEGREE,data=GSSdata)
+```
+
+This boxplot shows us median and quartile values, which seem to differ between each group. It also shows us the outliers of certain degrees. Overall, the data is very close in values, but there is still a clear difference between groups. The more advanced in education, the higher the score seems to be, and vise versa. 
+
+
 #### Numerical Descriptive Results
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+
+```{r}
+favstats(WORDSUM~DEGREE,data=GSSdata)
+```
+
+This table shows the numerical values for median, mean, quartiles, and standard deviation. Overall, we see a different mean for each degree level. The mean in bachelors and junior college is about the same but all the other means are different. The max range is 12 for all groups except less than high school, which is 11. The quarter three value is the same in all groups apart from high school and less than high school. These ever changing values show variation within WORDSUM scores in each group.
 
 ### Inferential Results
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
+
+```{r}
+model1 <- aov(WORDSUM~DEGREE,data=GSSdata)
+summary.aov(model1)
+```
+
+The null hypothesis was "A persons performance on the wordsum test is not independent of their level of schooling." I reject the null hypothesis due to the p-value being 0.000236, which is less than 0.05. The high F value at 10.04 shows significance as well. When observing  mean and median scores within the box plot, there does seem to be a difference between the average score on the WORDSUM test and level of schooling DEGREE. This fact is proven in the numerical findings section. Additionally, there is a significant difference between less than high school and graduates. I cannot prove whether or not result on WORDSUM test is due to level of schooling degree but the observed difference is something to take into consideration when performing such tests. 
 
 # Discussion and Conclusion
 
