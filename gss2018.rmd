@@ -26,28 +26,52 @@ source("GrabData.R")
 The data in the dataframe GSSdata is from the 2018 General Social Survey. The first blocks of R-code has selected down a subset of the data to just 16 variables. It has further removed unwanted factor levels in much of the data. Examine the code in the GrabData.R file to see what it is doing. Some of the variables are categorical and others are numerical. Be sure to do a variable analysis before tackling each question.  
 First question - Is opinion on the death penalty (CAPPUN) independent of gun ownership (OWNGUN)?
 
+$H_0$ Opinion on death penalty is not independent on ownership of gun.  
+$H_A$ Opinion on death penalty is independent on ownership of gun. 
 
 ## Methods
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method.!-->
 
-##Results
+Both are categorical variables, each with two levels. Owning a gun would be a yes or no. Opinion on death penalty would be for or against. The analysis technique we will use is CAT~CAT. The results will show a bar chart, some numerical values, a fisher exact test for odds, and a chi-square test of independence.
+
+
+## Results
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
 ### Descriptive Results
 
+
+
 #### Graphical Descriptive Results
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+
+```{r}
+barchartGC(~CAPPUN + OWNGUN,data=GSSdata)
+barchartGC(~CAPPUN + OWNGUN,data=GSSdata, type="percent")
+```
 
 #### Numerical Descriptive Results
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
+```{r}
+table2 <- xtabs(~CAPPUN + OWNGUN, data=GSSdata)
+rowPerc(table2)
+colPerc(table2)
+```
+
 ### Inferential Results
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
+
+```{r}
+chisq.test(table2)
+chisqtestGC(table2)
+fisher.test(table2)
+```
 
 #  Question 2
 
