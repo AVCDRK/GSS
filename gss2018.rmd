@@ -55,11 +55,17 @@ First question - Is opinion on the death penalty (CAPPUN) independent of gun own
 
 Is there a difference in years of education (EDUC) between the those who did or did not vote in 2012 (VOTE12)?
 
+$H_0$: There is no difference in years of education between those that did vote and those that didn't in 2012.
+
+$H_a$: There is a difference in years of education between those that did vote and those that didn't in 2012.
+
 ## Methods
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method.!-->
 
-##Results
+I will compare the years of education in an individual (categorical) to whether or not that individual voted in 2012 (numerical) using a numerical-categorical analysis. I will use a boxplot graph, some numerical results,  and an aov model to analyze this.
+
+## Results
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
