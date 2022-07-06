@@ -1,7 +1,7 @@
 ---
 title: "General Social Survey"
-author: "Your Name"
-date: "Year 2020"
+author: "Kaylie Brehm"
+date: "Summer 2022"
 output: 
   html_document:
     number_sections: true
@@ -83,11 +83,16 @@ Is there a difference in years of education (EDUC) between the those who did or 
 
 Determine if a persons performance on the wordsum test (WORDSUM) is independent of their level of schooling (DEGREE).
 
+$H_0$ A persons performance on the wordsum test is not independent of their level of schooling.  
+$H_A$ A persons performance on the wordsum test is not independent of their level of schooling.
+
 ## Methods
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method.!-->
 
-##Results
+Both are numerical variables, each with many variables. The analysis technique we will use is Num~Num The results will show a scatterplot, some numerical values, and an anova plot.
+
+## Results
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
 
