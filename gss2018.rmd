@@ -85,7 +85,7 @@ chisqtestGC(table2)
 fisher.test(table2)
 ```
 
-If the opinion for capital punishment is dependent on opinion on gun ownership, then there is a difference, meaning it is not 50/50 equal results. The Chi-Square adds up this difference and subtracts what we would expect if the null hypothesis were true. The P-Value is the probability that the null hypothesis is true. The p-value of the chi square test is 0.02022. Since this p-value is under 0.05, I reject the null hypothesis due to it being so small. The p-value of the fisher exact test is 0.01651. Since this p-value is under 0.05, I once again reject the null hypothesis due to it being so small. The odds ratio was 2.271 which is 1.271 away from one. So the probability that capital punishment opinion is dependent on gun ownership opinion is 127%.
+If the opinion for capital punishment is dependent on opinion on gun ownership, then there is a difference, meaning it is not 50/50 equal results. The Chi-Square adds up this difference and subtracts what we would expect if the null hypothesis were true. The P-Value is the probability that the null hypothesis is true. The null hypothesis was "Opinion on death penalty is not independent on ownership on gun." The p-value of the chi square test is 0.02022. Since this p-value is under 0.05, I reject the null hypothesis due to it being so small. The p-value of the fisher exact test is 0.01651. Since this p-value is under 0.05, I once again reject the null hypothesis due to it being so small. The odds ratio was 2.271 which is 1.271 away from one. So the probability that capital punishment opinion is dependent on gun ownership opinion is 127%.
 
 
 #  Question 2
