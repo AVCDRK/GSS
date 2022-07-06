@@ -13,3 +13,4 @@ GSSdata <- filter(mydata3,CAPPUN=="FAVOR"|CAPPUN=="OPPOSE",VOTE12=="Voted"|VOTE1
 levels(GSSdata$VOTE12)[1] <- "voted12"
 levels(GSSdata$VOTE12)[2] <- "no in 12"
 rm(Gss,Gss1,mydata,mydata2,mydata3)
+
