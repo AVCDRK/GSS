@@ -84,7 +84,7 @@ Is there a difference in years of education (EDUC) between the those who did or 
 Determine if a persons performance on the wordsum test (WORDSUM) is independent of their level of schooling (DEGREE).
 
 $H_0$ A persons performance on the wordsum test is not independent of their level of schooling.  
-$H_A$ A persons performance on the wordsum test is not independent of their level of schooling.
+$H_A$ A persons performance on the wordsum test is independent of their level of schooling.
 
 ## Methods
 
@@ -107,7 +107,7 @@ The numerical values on the average score of WORDSUM test will be compared with 
 boxplot(WORDSUM~DEGREE,data=GSSdata)
 ```
 
-
+This boxplot shows us median and quartile values, which seem to differ between each group. It also shows us the outliers of certain degrees. Overall, the data is very close in values, but there is still a clear difference between groups. The more advanced in education, the higher the score seems to be, and vise versa. 
 
 
 #### Numerical Descriptive Results
@@ -118,7 +118,7 @@ boxplot(WORDSUM~DEGREE,data=GSSdata)
 favstats(WORDSUM~DEGREE,data=GSSdata)
 ```
 
-
+This table shows the numerical values for median, mean, quartiles, and standard deviation. Overall, we see a different mean for each degree level. The mean in bachelors and junior college is about the same but all the other means are different. The max range is 12 for all groups except less than high school, which is 11. The quarter three value is the same in all groups apart from high school and less than high school. These ever changing values show variation within WORDSUM scores in each group.
 
 ### Inferential Results
 
@@ -130,7 +130,7 @@ model1 <- aov(WORDSUM~DEGREE,data=GSSdata)
 summary.aov(model1)
 ```
 
-
+The null hypothesis was "A persons performance on the wordsum test is not independent of their level of schooling." I reject the null hypothesis due to the p-value being 0.000236, which is less than 0.05. When observing  mean and median scores within the box plot, there does seem to be a difference between the average score on the WORDSUM test and level of schooling DEGREE. This fact is proven in the numerical findings section. Additionally, there is a significant difference between less than high school and graduates. I cannot prove whether or not result on WORDSUM test is due to level of schooling degree but the observed difference is something to take into consideration when performing such tests.
 
 # Discussion and Conclusion
 
